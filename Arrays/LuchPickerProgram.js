@@ -1,0 +1,62 @@
+let lunches = [];
+
+function addLunchToEnd(arr, item) {
+  arr.push(item);
+  console.log(`${item} added to the end of the lunch menu.`);
+  return arr;
+}
+
+function addLunchToStart(arr, item) {
+  arr.unshift(item);
+  console.log(`${item} added to the start of the lunch menu.`);
+  return arr;
+}
+
+function removeLastLunch(arr) {
+  if (arr.length === 0) {
+    console.log("No lunches to remove.");
+  } else {
+    const removed = arr.pop();
+    console.log(`${removed} removed from the end of the lunch menu.`);
+  }
+  return arr;
+}
+
+function removeFirstLunch(arr) {
+  if (arr.length === 0) {
+    console.log("No lunches to remove.");
+  } else {
+    const removed = arr.shift();
+    console.log(`${removed} removed from the start of the lunch menu.`);
+  }
+  return arr;
+}
+
+function getRandomLunch(arr) {
+  if (arr.length === 0) {
+    console.log("No lunches available.");
+  } else {
+    const randomIndex = Math.floor(Math.random() * arr.length);
+    const item = arr[randomIndex];
+    console.log(`Randomly selected lunch: ${item}`);
+  }
+}
+
+function showLunchMenu(arr) {
+  if (arr.length === 0) {
+    console.log("The menu is empty.");
+  } else {
+    console.log(`Menu items: ${arr.join(", ")}`);
+  }
+}
+
+addLunchToEnd(lunches, "Tacos")
+
+addLunchToEnd(["Pizza", "Tacos"], "Burger")
+
+
+removeFirstLunch(["Salad", "Eggs", "Cheese"])
+
+removeLastLunch(["Sushi", "Pizza", "Noodles"])
+
+ showLunchMenu(["Pizza", "Burger", "Fries", "Salad"])
